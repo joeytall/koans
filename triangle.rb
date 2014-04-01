@@ -14,6 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  a,b,c = [a,b,c].sort
+  raise TriangleError if a <= 0 || a + b <= c
+
   case [a,b,c].uniq.size
   when 1 then :equilateral
   when 2 then :isosceles
